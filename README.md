@@ -2,8 +2,8 @@
 
 Site de uma ONG de ação comunitária, feito como **SPA** (Single Page Application) em HTML5, CSS3 e JavaScript puro, sem frameworks e sem dependências. Apresenta a organização, lista os projetos e permite o cadastro de voluntários, com dados guardados no navegador.
 
-- **Demonstração:** `https://SEU-USUARIO.github.io/semente-ativa/` (troque pelo endereço do seu repositório)
-- **Status do build:** ![CI](https://github.com/SEU-USUARIO/semente-ativa/actions/workflows/ci-deploy.yml/badge.svg)
+- **Demonstração:** `https://giovannagabriela-creator.github.io/SementeAtiva/`
+- **Status do build:** ![CI](https://github.com/GiovannaGabriela-creator/SementeAtiva/actions/workflows/ci-deploy.yml/badge.svg)
 
 ## Funcionalidades
 
@@ -23,8 +23,8 @@ Site de uma ONG de ação comunitária, feito como **SPA** (Single Page Applicat
 ## Como executar
 
 ```bash
-git clone https://github.com/SEU-USUARIO/semente-ativa.git
-cd semente-ativa
+git clone https://github.com/GiovannaGabriela-creator/SementeAtiva.git
+cd SementeAtiva
 npm run dev          # abre em http://localhost:8080
 ```
 

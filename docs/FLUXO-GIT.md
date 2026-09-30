@@ -7,21 +7,20 @@ O repositório já vem com histórico organizado: commits convencionais na `main
 Crie um repositório **vazio** em github.com (sem README, sem .gitignore) e depois:
 
 ```bash
-git remote add origin https://github.com/SEU-USUARIO/semente-ativa.git
+git remote add origin https://github.com/GiovannaGabriela-creator/SementeAtiva.git
 git push -u origin main --tags
 git push origin fix/acessibilidade feat/build-producao ci/deploy-github-pages docs/documentacao
 ```
 
 Para o site ir ao ar, ative o Pages: **Settings > Pages > Build and deployment > Source: GitHub Actions**. Veja [DEPLOY.md](DEPLOY.md).
 
-### Trocar o e-mail dos commits (opcional, antes do primeiro push)
+### E-mail dos commits
 
-Os commits foram criados com o e-mail `seu-email@exemplo.com`. Para usar o seu:
+Os commits já estão com o nome "Giovanna G.S Muniz" e o e-mail privado `GiovannaGabriela-creator@users.noreply.github.com`, que não expõe seu e-mail pessoal. Ele pode não ligar os commits ao seu perfil (o gráfico de contribuições pode não contar). Para ligar, pegue o seu e-mail privado em github.com > Settings > Emails (formato `NUMERO+GiovannaGabriela-creator@users.noreply.github.com`) e rode **antes do primeiro push**:
 
 ```bash
-git config user.name "Giovanna G.S Muniz"
-git config user.email "seu-email-real@exemplo.com"
-git rebase --root --rebase-merges --exec "git commit --amend --reset-author --no-edit"
+git config user.email "SEU-EMAIL-PRIVADO-DO-GITHUB"
+git filter-branch -f --env-filter 'export GIT_AUTHOR_EMAIL="SEU-EMAIL-PRIVADO-DO-GITHUB" GIT_COMMITTER_EMAIL="SEU-EMAIL-PRIVADO-DO-GITHUB"' --tag-name-filter cat -- --all
 ```
 
 Isso reescreve o histórico, então só faça antes de publicar.
