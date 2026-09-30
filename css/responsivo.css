@@ -1,0 +1,42 @@
+/* Instituto Semente Ativa — Ajustes responsivos (breakpoints 920px e 560px) */
+
+@media (max-width: 920px) {
+  .cabecalho .envolucro { flex-wrap: wrap; }
+  /* Menu recolhido: a classe --aberto é alternada por js/menu.js */
+  .nav-principal {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--cor-fundo);
+    border-bottom: 1px solid var(--cor-linha);
+    padding: 1.2rem 1.5rem;
+  }
+  .nav-principal--aberto { display: block; }
+  .nav-principal ul { flex-direction: column; gap: 0.9rem; }
+  .botao-menu { display: inline-flex; align-items: center; }
+  .hero .envolucro { grid-template-columns: 1fr; }
+  .hero__grafico { max-width: 380px; }
+  .grade-estatisticas { grid-template-columns: repeat(2, 1fr); }
+  .grade-pilares { grid-template-columns: 1fr; gap: 2.2rem; }
+  .grade-projetos { grid-template-columns: 1fr; }
+  .layout-cadastro { grid-template-columns: 1fr; }
+  .painel-lateral { position: static; }
+  .rodape .envolucro { grid-template-columns: 1fr 1fr; }
+  .linha-campos--2,
+  .linha-campos--3,
+  .linha-campos--cep,
+  .linha-campos--endereco,
+  .linha-campos--cidade { grid-template-columns: 1fr; }
+  .grupo-opcoes { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+  .rodape .envolucro { grid-template-columns: 1fr; }
+  .secao__cabecalho { flex-direction: column; align-items: flex-start; gap: 0.8rem; }
+}
+
+@media (max-width: 420px) {
+  .cabecalho .botao--acento { display: none; } /* o link "Seja voluntário" continua no menu */
+}

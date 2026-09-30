@@ -1,0 +1,92 @@
+/* Instituto Semente Ativa — design tokens.
+   Tema claro é o padrão; o escuro vale por preferência do sistema ou por escolha da pessoa
+   (atributo data-tema="claro|escuro" na tag <html>, gravado por js/tema.js). */
+:root {
+  color-scheme: light;
+  --cor-primaria: #3F6B4A;
+  --cor-primaria-escura: #274A32;
+  --cor-acento: #C97A2B;
+  --cor-acento-escuro: #9C5D1E;
+  --cor-sobre-acento: #24201A;
+  --cor-claro-fixo: #FAF6EC;
+  --cor-branco: #FFFFFF;
+
+  --fonte-titulo: 'Fraunces', Georgia, serif;
+  --fonte-corpo: 'Source Sans 3', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+
+  --esp-1: 0.5rem;
+  --esp-2: 1rem;
+  --esp-3: 1.5rem;
+  --esp-4: 2.5rem;
+  --esp-5: 4rem;
+
+  --largura-maxima: 1120px;
+  --raio: 4px;
+  --transicao: 0.2s ease;
+  --altura-toque: 2.75rem;
+
+  --cor-fundo: #FAF6EC;
+  --cor-superficie: #F3EEDF;
+  --cor-cartao: #FFFFFF;
+  --cor-tinta: #24201A;
+  --cor-tinta-suave: #55503F;
+  --cor-titulo: #274A32;
+  --cor-acento-texto: #9C5D1E;
+  --cor-linha: #DDD5C2;
+  --cor-borda-campo: #8A8270;
+  --cor-erro: #A6392B;
+  --cor-sucesso: #2F6B3E;
+  --cor-placeholder: #6F6752;
+  --fundo-ilustracao: transparent;
+  --sombra: 0 1px 2px rgba(36, 32, 26, 0.06);
+  --alerta-sucesso-fundo: #E4F1E5; --alerta-sucesso-borda: #B9DCBB; --alerta-sucesso-texto: #1F5A2E;
+  --alerta-erro-fundo: #F7E5E2;    --alerta-erro-borda: #E5B8AF;    --alerta-erro-texto: #8F2A1D;
+  --alerta-info-fundo: #E3EDF7;    --alerta-info-borda: #B5CDE6;    --alerta-info-texto: #234E7A;
+  --alerta-aviso-fundo: #FBEFD9;   --alerta-aviso-borda: #E8CB94;   --alerta-aviso-texto: #6B4510;
+}
+
+:root[data-tema="escuro"] {
+  color-scheme: dark;
+  --cor-fundo: #16130F;
+  --cor-superficie: #211D17;
+  --cor-cartao: #1D1914;
+  --cor-tinta: #F2EDE0;
+  --cor-tinta-suave: #C9C1AB;
+  --cor-titulo: #BFE0C6;
+  --cor-acento-texto: #E0A15E;
+  --cor-linha: #4A4335;
+  --cor-borda-campo: #8F866F;
+  --cor-erro: #FF9F8F;
+  --cor-sucesso: #7FCB90;
+  --cor-placeholder: #A0977F;
+  --fundo-ilustracao: #FAF6EC;
+  --sombra: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --alerta-sucesso-fundo: #1B2E20; --alerta-sucesso-borda: #3F7A4F; --alerta-sucesso-texto: #9AD8A8;
+  --alerta-erro-fundo: #35191A;    --alerta-erro-borda: #8F3A34;    --alerta-erro-texto: #FFB4A8;
+  --alerta-info-fundo: #17273A;    --alerta-info-borda: #3A6591;    --alerta-info-texto: #A9CBF0;
+  --alerta-aviso-fundo: #33270F;   --alerta-aviso-borda: #8A6A20;   --alerta-aviso-texto: #F0CB80;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-tema="claro"]) {
+    color-scheme: dark;
+  --cor-fundo: #16130F;
+  --cor-superficie: #211D17;
+  --cor-cartao: #1D1914;
+  --cor-tinta: #F2EDE0;
+  --cor-tinta-suave: #C9C1AB;
+  --cor-titulo: #BFE0C6;
+  --cor-acento-texto: #E0A15E;
+  --cor-linha: #4A4335;
+  --cor-borda-campo: #8F866F;
+  --cor-erro: #FF9F8F;
+  --cor-sucesso: #7FCB90;
+  --cor-placeholder: #A0977F;
+  --fundo-ilustracao: #FAF6EC;
+  --sombra: 0 1px 2px rgba(0, 0, 0, 0.4);
+  --alerta-sucesso-fundo: #1B2E20; --alerta-sucesso-borda: #3F7A4F; --alerta-sucesso-texto: #9AD8A8;
+  --alerta-erro-fundo: #35191A;    --alerta-erro-borda: #8F3A34;    --alerta-erro-texto: #FFB4A8;
+  --alerta-info-fundo: #17273A;    --alerta-info-borda: #3A6591;    --alerta-info-texto: #A9CBF0;
+  --alerta-aviso-fundo: #33270F;   --alerta-aviso-borda: #8A6A20;   --alerta-aviso-texto: #F0CB80;
+  }
+}

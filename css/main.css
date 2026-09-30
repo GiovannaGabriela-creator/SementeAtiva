@@ -1,0 +1,11 @@
+/* Instituto Semente Ativa — ponto de entrada. A ordem das camadas define a cascata. */
+@layer tokens, base, layout, componentes, feedback, formulario, utilidades, responsivo;
+
+@import url("tokens.css") layer(tokens);
+@import url("base.css") layer(base);
+@import url("layout.css") layer(layout);
+@import url("componentes.css") layer(componentes);
+@import url("feedback.css") layer(feedback);
+@import url("formulario.css") layer(formulario);
+@import url("utilidades.css") layer(utilidades);
+@import url("responsivo.css") layer(responsivo);

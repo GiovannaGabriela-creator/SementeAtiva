@@ -1,0 +1,160 @@
+/* Instituto Semente Ativa — Layout: container, cabeçalho, hero, seções e rodapé */
+
+/* Container */
+.envolucro {
+  width: 100%;
+  max-width: var(--largura-maxima);
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ---------- Cabeçalho ---------- */
+.cabecalho {
+  border-bottom: 1px solid var(--cor-linha);
+  background: var(--cor-fundo);
+  position: sticky;
+  top: 0;
+  z-index: 40;
+}
+.cabecalho .envolucro { position: relative; }
+.cabecalho .envolucro {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.1rem;
+  gap: 1rem;
+}
+.marca {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--fonte-titulo);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--cor-titulo);
+  text-decoration: none;
+}
+.marca__simbolo {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+}
+.nav-principal ul {
+  display: flex;
+  gap: 1.9rem;
+  list-style: none;
+}
+.nav-principal a {
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.98rem;
+  color: var(--cor-tinta);
+  padding-block: 0.3rem;
+  border-bottom: 2px solid transparent;
+}
+.nav-principal a:hover,
+.nav-principal a[aria-current="page"] {
+  border-bottom-color: var(--cor-acento);
+  color: var(--cor-titulo);
+}
+.botao-menu {
+  display: none;
+  background: none;
+  border: 1px solid var(--cor-linha);
+  border-radius: var(--raio);
+  padding: 0.5rem 0.7rem;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding-block: clamp(3rem, 7vw, 6rem);
+  border-bottom: 1px solid var(--cor-linha);
+}
+.hero .envolucro {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 3rem;
+  align-items: center;
+}
+.hero__elo {
+  font-weight: 600;
+  color: var(--cor-acento-texto);
+  font-size: 0.95rem;
+  margin-bottom: 0.9rem;
+  display: block;
+}
+.hero__titulo { margin-bottom: 1.3rem; }
+.hero__texto {
+  color: var(--cor-tinta-suave);
+  font-size: 1.12rem;
+  margin-bottom: 1.8rem;
+}
+.hero__acoes { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero__grafico { width: 100%; height: auto; }
+
+/* ---------- Seções gerais ---------- */
+.secao {
+  padding-block: clamp(2.6rem, 5vw, 4.5rem);
+  border-bottom: 1px solid var(--cor-linha);
+}
+.secao:last-of-type { border-bottom: none; }
+.secao__cabecalho {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 2.2rem;
+}
+.secao__intro { color: var(--cor-tinta-suave); margin-top: 0.7rem; }
+
+/* ---------- Rodapé ---------- */
+.rodape {
+  background: var(--cor-superficie);
+  border-top: 1px solid var(--cor-linha);
+  padding-block: 3rem 2rem;
+}
+.rodape .envolucro {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr 1fr 1fr;
+  gap: 2.5rem;
+}
+.rodape h2 {
+  font-size: 1.15rem;
+  margin-bottom: 0.9rem;
+}
+.rodape p { color: var(--cor-tinta-suave); font-size: 0.94rem; }
+.rodape nav ul { list-style: none; display: flex; flex-direction: column; gap: 0.55rem; }
+.rodape nav a { text-decoration: none; font-size: 0.94rem; color: var(--cor-tinta-suave); }
+.rodape nav a:hover { color: var(--cor-titulo); }
+.rodape__base {
+  max-width: var(--largura-maxima);
+  margin: 2.5rem auto 0;
+  padding-inline: 1.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid var(--cor-linha);
+  font-size: 0.86rem;
+  color: var(--cor-tinta-suave);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+}
+
+/* ---------- Cabeçalho de página interna ---------- */
+.cabecalho-pagina {
+  padding-block: clamp(2.6rem, 5vw, 4rem) 2rem;
+  border-bottom: 1px solid var(--cor-linha);
+}
+.trilha {
+  font-size: 0.88rem;
+  color: var(--cor-tinta-suave);
+  margin-bottom: 1rem;
+}
+.trilha a { text-decoration: none; color: var(--cor-tinta-suave); }
+.trilha a:hover { color: var(--cor-titulo); }
+.trilha [aria-current="page"] { color: var(--cor-tinta); font-weight: 600; }
+
+
+.rodape address { font-style: normal; color: var(--cor-tinta-suave); font-size: 0.94rem; }
+
+.hero__grafico { background: var(--fundo-ilustracao); border-radius: 12px; }

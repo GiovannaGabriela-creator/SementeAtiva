@@ -1,0 +1,166 @@
+/* Instituto Semente Ativa — Formulário de cadastro */
+
+/* ==========================================================================
+   Formulário de cadastro
+   ========================================================================== */
+.layout-cadastro {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 3rem;
+  align-items: start;
+}
+.painel-lateral {
+  background: var(--cor-superficie);
+  border: 1px solid var(--cor-linha);
+  border-radius: var(--raio);
+  padding: 1.8rem;
+  position: sticky;
+  top: 5.5rem;
+}
+.painel-lateral h2 { font-size: 1.1rem; margin-bottom: 0.9rem; }
+.painel-lateral ul { list-style: none; display: flex; flex-direction: column; gap: 0.9rem; }
+.painel-lateral li {
+  font-size: 0.92rem;
+  color: var(--cor-tinta-suave);
+  padding-left: 1.5rem;
+  position: relative;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+.painel-lateral li a { overflow-wrap: break-word; word-break: break-word; }
+.painel-lateral li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.4em;
+  width: 8px;
+  height: 8px;
+  background: var(--cor-acento);
+  border-radius: 50%;
+}
+
+.formulario {
+  background: var(--cor-cartao);
+  border: 1px solid var(--cor-linha);
+  border-radius: var(--raio);
+  padding: clamp(1.6rem, 3vw, 2.6rem);
+}
+fieldset {
+  border: none;
+  padding: 0;
+  margin: 0 0 2.2rem;
+}
+fieldset:last-of-type { margin-bottom: 0; }
+legend {
+  font-family: var(--fonte-titulo);
+  font-size: 1.2rem;
+  color: var(--cor-titulo);
+  padding: 0 0 0.4rem;
+  margin-bottom: 1.3rem;
+  border-bottom: 1px solid var(--cor-linha);
+  width: 100%;
+  font-weight: 600;
+}
+.campo {
+  margin-bottom: 1.35rem;
+}
+.linha-campos {
+  display: grid;
+  gap: 1.35rem;
+}
+.linha-campos--2 { grid-template-columns: 1fr 1fr; }
+.linha-campos--3 { grid-template-columns: 1.4fr 0.9fr 0.9fr; }
+.linha-campos--cep { grid-template-columns: 0.7fr 1.3fr; }
+.linha-campos--endereco { grid-template-columns: 2fr 0.8fr; }
+.linha-campos--cidade { grid-template-columns: 1.5fr 0.6fr; }
+
+label {
+  display: block;
+  font-weight: 600;
+  font-size: 0.94rem;
+  margin-bottom: 0.4rem;
+  color: var(--cor-tinta);
+}
+.rotulo-opcional {
+  font-weight: 400;
+  color: var(--cor-tinta-suave);
+  font-size: 0.85rem;
+}
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+textarea,
+select {
+  width: 100%;
+  padding: 0.72rem 0.85rem;
+  border: 1px solid var(--cor-borda-campo);
+  border-radius: var(--raio);
+  background: var(--cor-fundo);
+  font-size: 1rem;
+  color: var(--cor-tinta);
+}
+textarea { resize: vertical; min-height: 6rem; }
+input::placeholder, textarea::placeholder { color: var(--cor-placeholder); }
+
+input:invalid:not(:placeholder-shown):not(:focus),
+textarea:invalid:not(:placeholder-shown):not(:focus) {
+  border-color: var(--cor-erro);
+}
+.campo.campo--erro input,
+.campo.campo--erro select {
+  border-color: var(--cor-erro);
+}
+.campo.campo--valido input {
+  border-color: var(--cor-sucesso);
+}
+
+.texto-ajuda {
+  font-size: 0.85rem;
+  color: var(--cor-tinta-suave);
+  margin-top: 0.35rem;
+}
+.mensagem-erro {
+  font-size: 0.85rem;
+  color: var(--cor-erro);
+  margin-top: 0.35rem;
+  display: none;
+  font-weight: 600;
+}
+.campo--erro .mensagem-erro { display: block; }
+
+.grupo-opcoes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.7rem 1.5rem;
+}
+.opcao-checkbox {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.6rem;
+  font-weight: 400;
+  font-size: 0.95rem;
+}
+.opcao-checkbox input { margin-top: 0.2rem; width: 1.05rem; height: 1.05rem; flex-shrink: 0; }
+
+.campo-termos {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  background: var(--cor-superficie);
+  padding: 1rem 1.1rem;
+  border-radius: var(--raio);
+}
+.campo-termos input { margin-top: 0.25rem; width: 1.1rem; height: 1.1rem; flex-shrink: 0; }
+.campo-termos label { font-weight: 400; font-size: 0.92rem; margin-bottom: 0; }
+
+.acoes-formulario {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+.regiao-status:not(:empty) { margin-bottom: 1.6rem; }
+

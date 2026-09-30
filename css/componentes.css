@@ -1,0 +1,221 @@
+/* Instituto Semente Ativa — Componentes: botões, estatísticas, cartões, CTA e filtro */
+
+/* ---------- Botões ---------- */
+.botao {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.6rem;
+  border-radius: var(--raio);
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  font-size: 1rem;
+  line-height: 1;
+}
+.botao--primario {
+  background: var(--cor-primaria);
+  color: var(--cor-branco);
+}
+.botao--primario:hover { background: var(--cor-primaria-escura); }
+.botao--acento {
+  background: var(--cor-acento);
+  color: var(--cor-sobre-acento); /* 4.9:1 (branco sobre o acento dava 3.3:1) */
+}
+.botao--acento:hover { background: var(--cor-acento-escuro); color: var(--cor-branco); }
+.botao--fantasma {
+  background: transparent;
+  border-color: var(--cor-tinta);
+  color: var(--cor-tinta);
+}
+.botao--fantasma:hover { background: var(--cor-superficie); }
+.botao--grande { padding: 1rem 2rem; font-size: 1.05rem; }
+.botao:disabled { opacity: 0.55; cursor: not-allowed; }
+
+/* ---------- Grade de estatísticas ---------- */
+.grade-estatisticas {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: var(--cor-linha);
+  border: 1px solid var(--cor-linha);
+}
+.estatistica {
+  background: var(--cor-fundo);
+  padding: 1.8rem 1.4rem;
+}
+.estatistica__numero {
+  font-family: var(--fonte-titulo);
+  font-size: 2.5rem;
+  color: var(--cor-titulo);
+  display: block;
+  font-weight: 600;
+}
+.estatistica__rotulo {
+  color: var(--cor-tinta-suave);
+  font-size: 0.95rem;
+  margin-top: 0.3rem;
+}
+
+/* ---------- Cartões de pilares / projetos ---------- */
+.grade-pilares {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr));
+  gap: 2rem;
+}
+.pilar {
+  border-top: 3px solid var(--cor-primaria);
+  padding-top: 1.2rem;
+}
+.pilar h3 { margin-bottom: 0.6rem; }
+.pilar p { color: var(--cor-tinta-suave); font-size: 0.98rem; }
+
+.grade-projetos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
+  gap: 2.2rem 2.5rem;
+}
+.projeto {
+  border: 1px solid var(--cor-linha);
+  background: var(--cor-cartao);
+  border-radius: var(--raio);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.projeto__faixa {
+  height: 8px;
+  background: var(--cor-acento);
+}
+.projeto[data-categoria="saude"] .projeto__faixa { background: #4E7BB5; }
+.projeto[data-categoria="educacao"] .projeto__faixa { background: var(--cor-acento); }
+.projeto[data-categoria="alimentar"] .projeto__faixa { background: var(--cor-primaria); }
+.projeto[data-categoria="ambiental"] .projeto__faixa { background: #6B8F3E; }
+.projeto__corpo { padding: 1.6rem 1.7rem 1.8rem; flex: 1; display: flex; flex-direction: column; }
+.projeto__categoria {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--cor-acento-texto);
+  margin-bottom: 0.5rem;
+}
+.projeto h3 { margin-bottom: 0.7rem; }
+.projeto p { color: var(--cor-tinta-suave); font-size: 0.97rem; margin-bottom: 1.1rem; }
+.projeto__meta {
+  margin-top: auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.88rem;
+  color: var(--cor-tinta-suave);
+  border-top: 1px solid var(--cor-linha);
+  padding-top: 0.9rem;
+}
+.projeto__meta strong { color: var(--cor-tinta); }
+
+/* ---------- Citação / depoimento ---------- */
+.citacao {
+  font-family: var(--fonte-titulo);
+  font-style: italic;
+  font-size: clamp(1.3rem, 2.4vw, 1.7rem);
+  color: var(--cor-titulo);
+  max-width: 46ch;
+  line-height: 1.4;
+}
+.citacao footer {
+  font-family: var(--fonte-corpo);
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--cor-tinta-suave);
+  margin-top: 1rem;
+}
+
+/* ---------- CTA final ---------- */
+.cta-final {
+  background: var(--cor-primaria-escura);
+  color: var(--cor-claro-fixo);
+}
+.cta-final h2 { color: var(--cor-claro-fixo); }
+.cta-final p { color: #D8E2D7; }
+.cta-final .secao__cabecalho { align-items: center; }
+
+/* ---------- Filtro de projetos ---------- */
+.filtro-projetos {
+  display: flex;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.4rem;
+}
+.filtro-projetos button {
+  border: 1px solid var(--cor-linha);
+  background: var(--cor-cartao);
+  padding: 0.5rem 1.1rem;
+  border-radius: 999px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: var(--cor-tinta-suave);
+}
+.filtro-projetos button[aria-pressed="true"] {
+  background: var(--cor-primaria-escura);
+  border-color: var(--cor-primaria-escura);
+  color: var(--cor-branco);
+}
+
+
+/* Estatísticas em lista semântica (<ul>) */
+.grade-estatisticas { list-style: none; padding: 0; }
+.estatistica__rotulo { display: block; }
+.projeto[hidden] { display: none; }
+.projeto { box-shadow: var(--sombra); }
+
+/* ---------- Microinterações (respondem à ação da pessoa) ---------- */
+.botao, .nav-principal a, .filtro-projetos button, .projeto {
+  transition: background-color var(--transicao), color var(--transicao), border-color var(--transicao);
+}
+.projeto:hover, .projeto:focus-within { border-color: var(--cor-primaria); }
+
+/* ---------- Status nos cartões de projeto e filtros ---------- */
+.projeto__topo { display: flex; justify-content: space-between; align-items: center; gap: 0.6rem; margin-bottom: 0.5rem; }
+.projeto__topo .projeto__categoria { margin-bottom: 0; }
+.filtros { display: grid; gap: 0.8rem; margin-bottom: 2.4rem; }
+.filtros .filtro-projetos { margin-bottom: 0; }
+
+/* ---------- Alternador de tema (sol = claro, lua = escuro) ---------- */
+.alternar-tema {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid var(--cor-borda-campo);
+  border-radius: 999px;
+}
+.alternar-tema__botao {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--altura-toque);
+  height: var(--altura-toque);
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: var(--cor-tinta);
+  transition: background-color var(--transicao), color var(--transicao);
+}
+.alternar-tema__botao:hover { background: var(--cor-superficie); }
+.alternar-tema__botao[aria-pressed="true"] { background: var(--cor-primaria-escura); color: var(--cor-branco); }
+.alternar-tema__botao svg { width: 20px; height: 20px; }
+
+/* ---------- Página do guia de componentes ---------- */
+.demo-linha { display: flex; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.4rem; align-items: center; }
+.demo-pilha { display: grid; gap: 1rem; margin-top: 1.4rem; max-width: 46rem; }
+
+/* ---------- SPA: carregamento, links, tabela e ações ---------- */
+.carregando { padding-block: 4rem; text-align: center; color: var(--cor-tinta-suave); max-width: none; }
+.link-secao { color: var(--cor-titulo); font-weight: 600; text-decoration: underline; text-underline-offset: 0.2em; }
+.barra-ferramentas { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.4rem; }
+.tabela-rolagem { overflow-x: auto; border: 1px solid var(--cor-linha); border-radius: var(--raio); background: var(--cor-cartao); }
+.tabela { width: 100%; min-width: 46rem; border-collapse: collapse; font-size: 0.94rem; }
+.tabela caption { text-align: left; padding: 1rem 1.1rem; font-family: var(--fonte-titulo); font-size: 1.1rem; color: var(--cor-titulo); }
+.tabela th, .tabela td { text-align: left; padding: 0.8rem 1.1rem; border-top: 1px solid var(--cor-linha); vertical-align: top; }
+.tabela thead th { font-size: 0.86rem; color: var(--cor-tinta-suave); }
+.botao--pequeno { padding: 0.5rem 1rem; font-size: 0.9rem; }
+.botao--perigo { background: transparent; border-color: var(--cor-erro); color: var(--cor-erro); }
+.botao--perigo:hover { background: var(--alerta-erro-fundo); }
