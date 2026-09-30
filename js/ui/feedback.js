@@ -70,7 +70,8 @@ function obterPilha() {
 
 function toast(tipo, mensagem, opcoes) {
   tipo = tipoValido(tipo);
-  const duracao = (opcoes && opcoes.duracao) || (tipo === 'erro' ? 9000 : 6000);
+  // WCAG 2.2.1: erros ficam até serem fechados; os demais somem sozinhos, com pausa ao ler
+  const duracao = (opcoes && opcoes.duracao) || (tipo === 'erro' ? 0 : 6000);
   const item = el('div', 'toast toast--' + tipo);
   // erro interrompe a leitura; os demais esperam a fala atual terminar
   item.setAttribute('role', tipo === 'erro' ? 'alert' : 'status');
@@ -94,7 +95,7 @@ function toast(tipo, mensagem, opcoes) {
     item.classList.remove('toast--visivel');
     window.setTimeout(function () { item.remove(); }, 250);
   }
-  function iniciar() { window.clearTimeout(temporizador); temporizador = window.setTimeout(remover, duracao); }
+  function iniciar() { window.clearTimeout(temporizador); if (duracao > 0) temporizador = window.setTimeout(remover, duracao); }
   function pausar() { window.clearTimeout(temporizador); }
 
   fechar.addEventListener('click', remover);
