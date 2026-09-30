@@ -1,0 +1,111 @@
+/* Instituto Semente Ativa — Feedback: badges, alertas, toast e modal.
+   Cada variante define só 3 variáveis (_fundo, _borda, _texto); as regras abaixo são compartilhadas. */
+
+.badge--ativo, .alerta--sucesso, .toast--sucesso { --_fundo: var(--alerta-sucesso-fundo); --_borda: var(--alerta-sucesso-borda); --_texto: var(--alerta-sucesso-texto); }
+.badge--andamento, .alerta--info, .toast--info { --_fundo: var(--alerta-info-fundo); --_borda: var(--alerta-info-borda); --_texto: var(--alerta-info-texto); }
+.alerta--erro, .toast--erro { --_fundo: var(--alerta-erro-fundo); --_borda: var(--alerta-erro-borda); --_texto: var(--alerta-erro-texto); }
+.alerta--aviso, .toast--aviso { --_fundo: var(--alerta-aviso-fundo); --_borda: var(--alerta-aviso-borda); --_texto: var(--alerta-aviso-texto); }
+.badge--concluido { --_fundo: var(--cor-superficie); --_borda: var(--cor-linha); --_texto: var(--cor-tinta-suave); }
+
+/* ---------- Badges ---------- */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.2rem 0.7rem;
+  border: 1px solid var(--_borda);
+  border-radius: 999px;
+  background: var(--_fundo);
+  color: var(--_texto);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.badge__ponto { width: 0.5rem; height: 0.5rem; border-radius: 50%; background: currentColor; }
+.badge--concluido .badge__ponto { border-radius: 1px; } /* forma diferente: o estado não depende só da cor */
+
+/* ---------- Alertas ---------- */
+.alerta {
+  display: flex;
+  gap: 0.8rem;
+  align-items: flex-start;
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--_borda);
+  border-left-width: 6px;
+  border-radius: var(--raio);
+  background: var(--_fundo);
+  color: var(--_texto);
+}
+.alerta__titulo { display: block; font-weight: 700; }
+.alerta__texto p { color: inherit; font-size: 0.95rem; max-width: none; }
+.icone { flex-shrink: 0; margin-top: 0.1rem; }
+
+/* ---------- Toast ---------- */
+.toasts {
+  position: fixed;
+  right: 1rem;
+  bottom: calc(1rem + env(safe-area-inset-bottom, 0px));
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  width: min(24rem, calc(100% - 2rem));
+}
+.toast {
+  display: flex;
+  gap: 0.7rem;
+  align-items: flex-start;
+  padding: 0.9rem 0.6rem 0.9rem 1rem;
+  border: 1px solid var(--_borda);
+  border-radius: var(--raio);
+  background: var(--_fundo);
+  color: var(--_texto);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity var(--transicao), transform var(--transicao);
+}
+.toast--visivel { opacity: 1; transform: none; }
+.toast__texto { flex: 1; font-size: 0.95rem; font-weight: 600; color: inherit; margin-top: 0.05rem; }
+.toast__fechar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.25rem;
+  height: 2.25rem;
+  flex-shrink: 0;
+  margin-block: -0.4rem;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+}
+.toast__fechar:hover { background: rgba(127, 127, 127, 0.2); }
+
+/* ---------- Modal (<dialog> nativo: foco preso, Esc e fundo inerte já vêm do navegador) ---------- */
+.modal {
+  margin: auto; /* o reset "* { margin: 0 }" tiraria o centro do dialog */
+  width: 100%;
+  max-width: min(32rem, calc(100% - 2rem));
+  padding: 0;
+  border: 1px solid var(--cor-linha);
+  border-radius: var(--raio);
+  background: var(--cor-cartao);
+  color: var(--cor-tinta);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+.modal::backdrop { background: rgba(20, 16, 10, 0.65); }
+.modal__corpo { padding: 1.6rem; }
+.modal__cabecalho { display: flex; align-items: center; gap: 0.7rem; margin-bottom: 0.8rem; color: var(--_texto, var(--cor-titulo)); }
+.modal__cabecalho h2 { font-size: 1.35rem; }
+.modal__acoes { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 0.8rem; margin-top: 1.6rem; }
+.modal--sucesso { --_texto: var(--alerta-sucesso-texto); }
+.modal--aviso { --_texto: var(--alerta-aviso-texto); }
+.modal--info { --_texto: var(--alerta-info-texto); }
+.modal--erro { --_texto: var(--alerta-erro-texto); }
+.modal__cabecalho h2 { color: var(--cor-titulo); }
+
+@media (forced-colors: active) {
+  .badge, .alerta, .toast { border: 1px solid CanvasText; }
+}
