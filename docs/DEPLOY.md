@@ -7,7 +7,7 @@ O site é estático (só HTML, CSS e JS), então roda em qualquer hospedagem de 
 1. Publique o código no GitHub (veja [FLUXO-GIT.md](FLUXO-GIT.md)).
 2. Em **Settings > Pages > Build and deployment**, escolha **Source: GitHub Actions**.
 3. Faça um push na `main` (ou rode o workflow em **Actions > CI e deploy > Run workflow**).
-4. O workflow executa `npm test`, `npm run build` e publica a pasta `dist/`. O endereço aparece no job "Publica no GitHub Pages" e em Settings > Pages, no formato `https://SEU-USUARIO.github.io/semente-ativa/`.
+4. O workflow executa `npm test`, `npm run build` e publica a pasta `dist/`. O endereço aparece no job "Publica no GitHub Pages" e em Settings > Pages, no formato `https://giovannagabriela-creator.github.io/SementeAtiva/`.
 
 Os caminhos dos arquivos no build são relativos, então funciona dentro do subcaminho `/semente-ativa/` sem configuração extra.
 

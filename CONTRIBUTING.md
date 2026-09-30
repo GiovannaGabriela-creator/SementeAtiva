@@ -3,8 +3,8 @@
 ## Preparar o ambiente
 
 ```bash
-git clone https://github.com/SEU-USUARIO/semente-ativa.git
-cd semente-ativa
+git clone https://github.com/GiovannaGabriela-creator/SementeAtiva.git
+cd SementeAtiva
 npm test && npm run dev
 ```
 
