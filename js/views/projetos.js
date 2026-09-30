@@ -8,7 +8,7 @@ const CHAVE_FILTRO = 'filtros-projetos';
 const validos = (lista, v) => (v === 'todos' || lista.some((p) => p[0] === v)) ? v : 'todos';
 
 const botoes = (atributo, opcoes, atual, rotuloTodos) => [['todos', rotuloTodos]].concat(opcoes).map((o) => html`
-  <button type="button" aria-pressed="${o[0] === atual}" ${atributo}="${o[0]}">${o[1]}</button>`);
+  <button type="button" aria-pressed="${String(o[0] === atual)}" ${atributo}="${o[0]}">${o[1]}</button>`);
 
 const lista = (filtro) => {
   const itens = projetos.filter((p) => (filtro.categoria === 'todos' || p.categoria === filtro.categoria) &&
